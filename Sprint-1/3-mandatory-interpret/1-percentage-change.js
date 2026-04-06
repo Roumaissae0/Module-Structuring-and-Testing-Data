@@ -2,7 +2,7 @@ let carPrice = "10,000";
 let priceAfterOneYear = "8,543";
 
 carPrice = Number(carPrice.replaceAll(",", ""));
-priceAfterOneYear = Number(priceAfterOneYear.replaceAll("," ""));
+priceAfterOneYear = Number(priceAfterOneYear.replaceAll(",", ""));
 
 const priceDifference = carPrice - priceAfterOneYear;
 const percentageChange = (priceDifference / carPrice) * 100;
@@ -13,10 +13,20 @@ console.log(`The percentage change is ${percentageChange}`);
 
 // a) How many function calls are there in this file? Write down all the lines where a function call is made
 
+//     Line 4, 5, 8, 10 . I got Number and replaceAll in line 4, the same thing in line 5 , PercentageChange in line 8 and console.log 
+
 // b) Run the code and identify the line where the error is coming from - why is this error occurring? How can you fix this problem?
+
+//     The error is SyntaxError: missing ) after argument list. The way that we can fix it is adding a , to replaceall in line 5 is different from the line 4
 
 // c) Identify all the lines that are variable reassignment statements
 
+//     The line 4 and 5
+
 // d) Identify all the lines that are variable declarations
 
+//     The line 1, 2, 7 and 8
+
 // e) Describe what the expression Number(carPrice.replaceAll(",","")) is doing - what is the purpose of this expression?
+
+//     It remove the , from the number so it will be a real number and not just text with a comma.
