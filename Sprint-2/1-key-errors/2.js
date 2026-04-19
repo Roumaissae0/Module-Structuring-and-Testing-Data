@@ -5,9 +5,12 @@
 
 // =============> write your prediction of the error here
 
-function square(3) {
+function square(num) {
     return num * num;
 }
+const result = square(3)
+console.log(result);
+
 
 // =============> write the error message here
 
