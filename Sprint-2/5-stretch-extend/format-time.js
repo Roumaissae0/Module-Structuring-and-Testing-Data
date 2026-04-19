@@ -4,22 +4,34 @@
 
 function formatAs12HourClock(time) {
   const hours = Number(time.slice(0, 2));
-  if (hours > 12) {
-    return `${hours - 12}:00 pm`;
+  const minute = time.slice(3, 5);
+
+  let period = "am";
+  let displayHours = hours;
+
+ if (hours === 12) {
+    period = "pm";
+  } else if (hours > 12) {
+    displayHours = hours - 12;
+    period = "pm";
+  } else if (hours === 0) {
+    // 3. Handle Midnight
+    displayHours = 12;
   }
-  return `${time} am`;
+
+
+const formattedHours = displayHours.toString().padStart(2, "0");
+
+  return `${formattedHours}:${minutes} ${period}`;
 }
 
-const currentOutput = formatAs12HourClock("08:00");
-const targetOutput = "08:00 am";
-console.assert(
-  currentOutput === targetOutput,
-  `current output: ${currentOutput}, target output: ${targetOutput}`
-);
 
-const currentOutput2 = formatAs12HourClock("23:00");
-const targetOutput2 = "11:00 pm";
-console.assert(
-  currentOutput2 === targetOutput2,
-  `current output: ${currentOutput2}, target output: ${targetOutput2}`
-);
+console.assert(formatAs12HourClock("08:30") === "08:30 am", "Error at 08:30");
+
+console.assert(formatAs12HourClock("23:45") === "11:45 pm", "Error at 23:45");
+
+console.assert(formatAs12HourClock("12:00") === "12:00 pm", "Error at 12:00");
+
+console.assert(formatAs12HourClock("00:15") === "12:15 am", "Error at 00:15");
+
+console.log("If you see no error messages above, all tests passed!");
