@@ -17,18 +17,19 @@ function formatTimeDisplay(seconds) {
 // Questions
 
 // a) When formatTimeDisplay is called how many times will pad be called?
-// =============> write your answer here
+// =============> 3 times .In the last line of the formatTimeDisplay function, you can see the word pad written three times
 
 // Call formatTimeDisplay with an input of 61, now answer the following:
 
 // b) What is the value assigned to num when pad is called for the first time?
-// =============> write your answer here
+// =============> 0
 
 // c) What is the return value of pad is called for the first time?
-// =============> write your answer here
+// =============> 00
 
 // d) What is the value assigned to num when pad is called for the last time in this program?  Explain your answer
-// =============> write your answer here
+// =============> 1 The last time the program calls pad, it is looking for the remainingSeconds. When you have 61 seconds, 60 of them make a full minute, and you have 1 second left over. That leftover 1 is what gets sent to num
 
+//
 // e) What is the return value assigned to num when pad is called for the last time in this program?  Explain your answer
-// =============> write your answer here
+// =============> 01 .The function takes the number 1. Because the code says padStart(2, "0"), it says: "Hey, this needs to be 2 characters long!". So, it puts a 0 in front of the 1, making it "01".
