@@ -5,8 +5,8 @@
 
 const num = 103;
 
-function getLastDigit() {
-  return num.toString().slice(-1);
+function getLastDigit(numbertoconvert) {
+  return numbertoconvert.toString().slice(-1);
 }
 
 console.log(`The last digit of 42 is ${getLastDigit(42)}`);
